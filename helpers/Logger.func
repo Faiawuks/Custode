@@ -1,0 +1,21 @@
+#! /bin/bash
+
+#
+# Script to create and write to logfiles
+#
+
+# Input for createLog()
+# ---------------------
+# $1 Message identifier
+# $2 Message path+filename
+createLog() {
+        
+}
+
+# Input for writeLog()
+# --------------------
+# $1 Message identifier
+# $2 Message content
+writeLog() {
+
+}

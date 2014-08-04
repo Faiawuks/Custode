@@ -1,0 +1,30 @@
+#! /bin/bash
+
+#
+# Script to check if user has access to root functions. 
+#
+
+needSudo () {
+    if [[ $EUID -ne 0 ]]; then
+        # User is not root
+        mShow "warning" "We need to use sudo."
+        
+        # Check if user has privileges, this triggers password prompt.
+        sudo -l > /dev/null 2>&1
+
+        if [ "$?" == 1 ]; then
+            # User can not use sudo.
+            mShow "error" "You are not privileged or have no sudo rights." "b"
+            exit 1;
+        fi
+    fi
+}
+
+checkSudo () {
+    # Check if user has used sudo, if so, don't bug with password prompt.
+    sudo -n true > /dev/null 2>&1
+    if [ "$?" == 1 ]; then
+        # User need to enter password
+        needSudo
+    fi
+}

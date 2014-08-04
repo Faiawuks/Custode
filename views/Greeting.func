@@ -1,0 +1,5 @@
+#! /bin/bash
+
+getGreeting() {
+    echo -e "\n\033[92mHello World\e[0m\n"
+}

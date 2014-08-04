@@ -1,0 +1,24 @@
+#! /bin/bash
+
+#
+# Script to check if user has access to root functions. 
+#
+
+trap trapExit SIGHUP SIGINT SIGQUIT SIGTERM
+
+trapExit() {
+    # Call command: trap trapExit SIGHUP SIGINT SIGQUIT
+    #
+    # Handle pressing of e.g. CTRL+C (SIGINT), (e.g. rollback).
+    # To call a handle function fill $ExecuteOnExit in the base script.
+    # 
+    if [ -n "${ExecuteOnExit}" ]; then
+        ${ExecuteOnExit}
+    else
+        detectManualExit
+    fi
+}
+
+detectManualExit() {
+    mShow "error" "Script exited manually." "a"
+}

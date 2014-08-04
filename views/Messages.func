@@ -1,0 +1,40 @@
+#! /bin/bash
+
+#
+# View for messages and log lines.
+#
+
+# Input for mShow()
+# -----------------
+# $1 The message type (success, warning, error, info)
+# $2 The message
+# $3 Newline location (a : above, b : below, f : both above and below)
+mShow() {
+    message="${2}\e[0m"
+
+    # Switch newline location
+    case "${3}" in
+    'a')
+        message="\n${message}"
+    ;;
+    'b')
+        message="${message}\n"
+    ;;
+    'f')
+        message="\n${message}\n"
+    ;;
+    esac    
+
+    # Switch message type
+    case "${1}" in
+    'success')
+        echo -e "\e[92m${message}"
+    ;;
+    'warning')
+        echo -e "\e[93m${message}"
+    ;;
+    'error')
+        echo -e "\e[91m${message}"
+    ;;
+    esac
+}

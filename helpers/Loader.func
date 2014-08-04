@@ -1,0 +1,12 @@
+#! /bin/bash
+
+RootDir="$(dirname "$0")"
+
+# Include helpers
+source "${RootDir}/helpers/CheckAccess.func"
+source "${RootDir}/helpers/Handling.func"
+source "${RootDir}/helpers/iniParser.func"
+
+# Include views
+source "${RootDir}/views/Greeting.func"
+source "${RootDir}/views/Messages.func"

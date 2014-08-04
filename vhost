@@ -1,0 +1,21 @@
+#! /bin/bash
+
+#
+# Virtual Host generation script
+#
+
+# Init toolset
+RootDir="$(dirname "$0")"
+source "${RootDir}/helpers/Loader.func"
+
+# Script variables
+
+
+# Base functions
+
+
+# Greet the user
+getGreeting
+
+# Check if this script is run as root
+checkSudo
