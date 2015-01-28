@@ -10,10 +10,10 @@ trapExit() {
     # Call command: trap trapExit SIGHUP SIGINT SIGQUIT
     #
     # Handle pressing of e.g. CTRL+C (SIGINT), (e.g. rollback).
-    # To call a handle function fill $ExecuteOnExit in the base script.
+    # To call a handle function fill $executeOnExit in the base script.
     # 
-    if [ -n "${ExecuteOnExit}" ]; then
-        ${ExecuteOnExit}
+    if [ -n "${executeOnExit}" ]; then
+        ${executeOnExit}
     else
         detectManualExit
     fi

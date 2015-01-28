@@ -1,12 +1,12 @@
 #! /bin/bash
-
 RootDir="$(dirname "$0")"
+RootDir=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 
 # Include helpers
-source "${RootDir}/helpers/CheckAccess.func"
-source "${RootDir}/helpers/Handling.func"
-source "${RootDir}/helpers/iniParser.func"
+source "${RootDir}/CheckAccess.func"
+source "${RootDir}/Handling.func"
+source "${RootDir}/iniParser.func"
 
 # Include views
-source "${RootDir}/views/Greeting.func"
-source "${RootDir}/views/Messages.func"
+source "${RootDir}/../views/Greeting.func"
+source "${RootDir}/../views/Messages.func"

@@ -1,12 +1,12 @@
 #! /bin/bash
 
 #
-# Virtual Host generation script
+# Example script.
 #
 
 # Init toolset
-RootDir="$(dirname "$0")"
-source "${RootDir}/helpers/Loader.func"
+rootDir="$(dirname "$0")"
+source "${RootDir}/../helpers/Loader.func"
 
 # Script variables
 
